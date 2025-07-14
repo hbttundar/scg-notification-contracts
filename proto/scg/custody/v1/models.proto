@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package proto.scg.notification.custody.models;
+
+import "proto/scg/custody/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/custody/v1;custodyv1";
+
+// CustodyRecord represents a record of custody transfer
+message CustodyRecord {
+  string id = 1;
+  string reference = 2;
+  string entity_id = 3;
+  string entity_type = 4;
+  string transferor_id = 5;
+  string transferor_name = 6;
+  string transferee_id = 7;
+  string transferee_name = 8;
+  proto.scg.notification.custody.enums.CustodyStatus status = 9;
+  proto.scg.notification.custody.enums.CustodyType type = 10;
+  proto.scg.notification.custody.enums.CustodyVerificationMethod verification_method = 11;
+  string location = 12;
+  google.protobuf.Timestamp initiated_at = 13;
+  google.protobuf.Timestamp transferred_at = 14;
+  google.protobuf.Timestamp received_at = 15;
+  string notes = 16;
+  map<string, string> metadata = 17;
+}
+
+// CustodyStatusChange represents a change in the status of a custody record
+message CustodyStatusChange {
+  string id = 1;
+  string custody_record_id = 2;
+  string custody_reference = 3;
+  proto.scg.notification.custody.enums.CustodyStatus previous_status = 4;
+  proto.scg.notification.custody.enums.CustodyStatus new_status = 5;
+  string actor_id = 6;
+  string actor_name = 7;
+  string location = 8;
+  string reason = 9;
+  google.protobuf.Timestamp status_changed_at = 10;
+}
+
+// CustodyEvidence represents evidence of a custody transfer
+message CustodyEvidence {
+  string id = 1;
+  string custody_record_id = 2;
+  string evidence_type = 3;
+  string evidence_url = 4;
+  string description = 5;
+  google.protobuf.Timestamp captured_at = 6;
+  string captured_by_id = 7;
+  string captured_by_name = 8;
+}

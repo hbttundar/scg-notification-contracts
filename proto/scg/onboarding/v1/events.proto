@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package proto.scg.notification.onboarding.events;
+
+import "proto/scg/shared/v1/events.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/onboarding/v1;onboardingv1";
+
+// PartnerOnboardingStartedNotification is sent when a partner begins the onboarding process
+message PartnerOnboardingStartedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string partner_uuid = 2;
+  string partner_name = 3;
+  string initiator_uuid = 4;
+  string initiator_name = 5;
+  string onboarding_workflow_uuid = 6;
+}
+
+// PartnerVettedNotification is sent when a partner passes vetting
+message PartnerVettedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string partner_uuid = 2;
+  string partner_name = 3;
+  string vetting_result = 4;
+  string vetting_details = 5;
+  google.protobuf.Timestamp vetting_completed_at = 6;
+}
+
+// PartnerOnboardingCompletedNotification is sent when a partner completes onboarding
+message PartnerOnboardingCompletedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string partner_uuid = 2;
+  string partner_name = 3;
+  string onboarding_workflow_uuid = 4;
+  google.protobuf.Timestamp completed_at = 5;
+}

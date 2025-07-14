@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package proto.scg.notification.event_log.events;
+
+import "proto/scg/shared/v1/events.proto";
+import "proto/scg/event_log/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/event_log/v1;event_logv1";
+
+// CriticalEventLogNotification is sent when a critical event is logged
+message CriticalEventLogNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string event_log_id = 2;
+  string event_type = 3;
+  string source = 4;
+  string actor_id = 5;
+  string actor_name = 6;
+  string entity_id = 7;
+  string entity_type = 8;
+  string message = 9;
+  google.protobuf.Timestamp occurred_at = 10;
+}
+
+// SecurityEventLogNotification is sent when a security-related event is logged
+message SecurityEventLogNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string event_log_id = 2;
+  string event_type = 3;
+  string source = 4;
+  string actor_id = 5;
+  string actor_name = 6;
+  string entity_id = 7;
+  string entity_type = 8;
+  proto.scg.notification.event_log.enums.EventLogSeverity severity = 9;
+  string message = 10;
+  google.protobuf.Timestamp occurred_at = 11;
+}
+
+// AuditEventLogNotification is sent when an audit-related event is logged
+message AuditEventLogNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string event_log_id = 2;
+  string event_type = 3;
+  string source = 4;
+  string actor_id = 5;
+  string actor_name = 6;
+  string entity_id = 7;
+  string entity_type = 8;
+  string message = 9;
+  google.protobuf.Timestamp occurred_at = 10;
+}
+
+// EventLogAggregationNotification is sent with an aggregation of event logs
+message EventLogAggregationNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string aggregation_id = 2;
+  string aggregation_name = 3;
+  int32 total_events = 4;
+  int32 critical_events = 5;
+  int32 error_events = 6;
+  int32 warning_events = 7;
+  google.protobuf.Timestamp aggregation_period_start = 8;
+  google.protobuf.Timestamp aggregation_period_end = 9;
+}
+
+// EventLogThresholdExceededNotification is sent when the number of events exceeds a threshold
+message EventLogThresholdExceededNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string threshold_name = 2;
+  string threshold_description = 3;
+  int32 threshold_value = 4;
+  int32 actual_value = 5;
+  proto.scg.notification.event_log.enums.EventLogSeverity severity = 6;
+  proto.scg.notification.event_log.enums.EventLogCategory category = 7;
+  google.protobuf.Timestamp threshold_exceeded_at = 8;
+  google.protobuf.Timestamp measurement_period_start = 9;
+  google.protobuf.Timestamp measurement_period_end = 10;
+}

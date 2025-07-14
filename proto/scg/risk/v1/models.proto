@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package proto.scg.notification.risk.models;
+
+import "proto/scg/risk/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/v1;risknotificationv1";
+
+// Risk represents a risk in the system
+message Risk {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  proto.scg.notification.risk.enums.RiskType type = 4;
+  proto.scg.notification.risk.enums.RiskLevel level = 5;
+  proto.scg.notification.risk.enums.RiskStatus status = 6;
+  double risk_score = 7;
+  double threshold = 8;
+  string entity_id = 9;
+  string entity_type = 10;
+  google.protobuf.Timestamp identified_at = 11;
+  google.protobuf.Timestamp last_assessed_at = 12;
+  string mitigation_plan = 13;
+  map<string, string> metadata = 14;
+}
+
+// RiskAssessment represents an assessment of a risk
+message RiskAssessment {
+  string id = 1;
+  string risk_id = 2;
+  string assessor_id = 3;
+  string assessor_name = 4;
+  double previous_risk_score = 5;
+  double new_risk_score = 6;
+  string assessment_notes = 7;
+  google.protobuf.Timestamp assessed_at = 8;
+}

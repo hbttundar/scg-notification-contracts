@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package proto.scg.notification.event_log.models;
+
+import "proto/scg/event_log/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/event_log/v1;event_logv1";
+
+// EventLog represents an event log entry in the system
+message EventLog {
+  string id = 1;
+  string event_type = 2;
+  string source = 3;
+  string actor_id = 4;
+  string actor_name = 5;
+  string entity_id = 6;
+  string entity_type = 7;
+  proto.scg.notification.event_log.enums.EventLogSeverity severity = 8;
+  proto.scg.notification.event_log.enums.EventLogCategory category = 9;
+  proto.scg.notification.event_log.enums.EventLogStatus status = 10;
+  string message = 11;
+  google.protobuf.Struct details = 12;
+  string trace_id = 13;
+  string correlation_id = 14;
+  google.protobuf.Timestamp occurred_at = 15;
+  google.protobuf.Timestamp recorded_at = 16;
+  map<string, string> metadata = 17;
+}
+
+// EventLogFilter represents a filter for querying event logs
+message EventLogFilter {
+  repeated string event_types = 1;
+  repeated string sources = 2;
+  repeated string actor_ids = 3;
+  repeated string entity_ids = 4;
+  repeated string entity_types = 5;
+  repeated proto.scg.notification.event_log.enums.EventLogSeverity severities = 6;
+  repeated proto.scg.notification.event_log.enums.EventLogCategory categories = 7;
+  repeated proto.scg.notification.event_log.enums.EventLogStatus statuses = 8;
+  google.protobuf.Timestamp from_date = 9;
+  google.protobuf.Timestamp to_date = 10;
+  string search_term = 11;
+}
+
+// EventLogAggregation represents an aggregation of event logs
+message EventLogAggregation {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  EventLogFilter filter = 4;
+  int32 count = 5;
+  google.protobuf.Timestamp aggregation_period_start = 6;
+  google.protobuf.Timestamp aggregation_period_end = 7;
+  map<string, int32> breakdown_by_severity = 8;
+  map<string, int32> breakdown_by_category = 9;
+  map<string, int32> breakdown_by_status = 10;
+  map<string, int32> breakdown_by_source = 11;
+}

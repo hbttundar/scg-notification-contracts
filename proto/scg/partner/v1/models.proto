@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package proto.scg.notification.partner.models;
+
+import "proto/scg/partner/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/partner/v1;partnerv1";
+
+// Partner represents a business partner in the system
+message Partner {
+  string id = 1;
+  string name = 2;
+  string legal_name = 3;
+  string tax_id = 4;
+  string registration_number = 5;
+  proto.scg.notification.partner.enums.PartnerType type = 6;
+  proto.scg.notification.partner.enums.PartnerStatus status = 7;
+  proto.scg.notification.partner.enums.PartnerTier tier = 8;
+  proto.scg.notification.partner.enums.PartnerVerificationStatus verification_status = 9;
+  string website = 10;
+  string email = 11;
+  string phone = 12;
+  string address_line1 = 13;
+  string address_line2 = 14;
+  string city = 15;
+  string state = 16;
+  string postal_code = 17;
+  string country = 18;
+  string primary_contact_id = 19;
+  string primary_contact_name = 20;
+  string primary_contact_email = 21;
+  string primary_contact_phone = 22;
+  google.protobuf.Timestamp onboarded_at = 23;
+  google.protobuf.Timestamp verified_at = 24;
+  google.protobuf.Timestamp last_updated_at = 25;
+  map<string, string> metadata = 26;
+}
+
+// PartnerStatusChange represents a change in the status of a partner
+message PartnerStatusChange {
+  string id = 1;
+  string partner_id = 2;
+  string partner_name = 3;
+  proto.scg.notification.partner.enums.PartnerStatus previous_status = 4;
+  proto.scg.notification.partner.enums.PartnerStatus new_status = 5;
+  string reason = 6;
+  string actor_id = 7;
+  string actor_name = 8;
+  google.protobuf.Timestamp status_changed_at = 9;
+}
+
+// PartnerVerification represents a verification record for a partner
+message PartnerVerification {
+  string id = 1;
+  string partner_id = 2;
+  string partner_name = 3;
+  proto.scg.notification.partner.enums.PartnerVerificationStatus status = 4;
+  string verifier_id = 5;
+  string verifier_name = 6;
+  repeated string verification_documents = 7;
+  string notes = 8;
+  google.protobuf.Timestamp verification_started_at = 9;
+  google.protobuf.Timestamp verification_completed_at = 10;
+  map<string, string> verification_metadata = 11;
+}
+
+// PartnerAgreement represents an agreement with a partner
+message PartnerAgreement {
+  string id = 1;
+  string partner_id = 2;
+  string partner_name = 3;
+  string agreement_type = 4;
+  string agreement_name = 5;
+  string agreement_document_url = 6;
+  string status = 7;
+  google.protobuf.Timestamp effective_date = 8;
+  google.protobuf.Timestamp expiration_date = 9;
+  string signed_by_partner_id = 10;
+  string signed_by_partner_name = 11;
+  google.protobuf.Timestamp signed_by_partner_at = 12;
+  string signed_by_company_id = 13;
+  string signed_by_company_name = 14;
+  google.protobuf.Timestamp signed_by_company_at = 15;
+}

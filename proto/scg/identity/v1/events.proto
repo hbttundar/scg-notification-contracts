@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package proto.scg.notification.identity.events;
+
+import "proto/scg/shared/v1/events.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/identity/v1;identityv1";
+
+// IdentityNotificationEvent is a placeholder for future identity notification events
+message IdentityNotificationEvent {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+}

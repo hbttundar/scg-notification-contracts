@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto.scg.notification.compliance.events;
+
+import "proto/scg/shared/v1/events.proto";
+import "proto/scg/shared/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/compliance/v1;compliancev1";
+
+// ComplianceCheckFailedNotification is sent when a compliance check fails
+message ComplianceCheckFailedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string entity_id = 2;
+  string entity_type = 3;
+  string compliance_check_id = 4;
+  string compliance_check_name = 5;
+  string failure_reason = 6;
+  repeated string violated_regulations = 7;
+  proto.scg.notification.shared.enums.NotificationSeverity severity = 8;
+  google.protobuf.Timestamp check_time = 9;
+}

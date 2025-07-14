@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package proto.scg.notification.warehouse.models;
+
+import "proto/scg/warehouse/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1";
+
+// Warehouse represents a warehouse in the system
+message Warehouse {
+  string id = 1;
+  string name = 2;
+  string code = 3;
+  string address = 4;
+  string city = 5;
+  string state = 6;
+  string country = 7;
+  string postal_code = 8;
+  proto.scg.notification.warehouse.enums.WarehouseStatus status = 9;
+  proto.scg.notification.warehouse.enums.WarehouseType type = 10;
+  float total_capacity = 11;
+  float available_capacity = 12;
+  float utilization_percentage = 13;
+  string manager_id = 14;
+  string manager_name = 15;
+  google.protobuf.Timestamp created_at = 16;
+  google.protobuf.Timestamp updated_at = 17;
+  map<string, string> metadata = 18;
+}
+
+// WarehouseZone represents a zone within a warehouse
+message WarehouseZone {
+  string id = 1;
+  string warehouse_id = 2;
+  string name = 3;
+  string code = 4;
+  string description = 5;
+  float capacity = 6;
+  float available_capacity = 7;
+  float utilization_percentage = 8;
+  bool temperature_controlled = 9;
+  float min_temperature = 10;
+  float max_temperature = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp updated_at = 13;
+}
+
+// InventoryOperation represents an inventory operation in a warehouse
+message InventoryOperation {
+  string id = 1;
+  string warehouse_id = 2;
+  string warehouse_name = 3;
+  string zone_id = 4;
+  string zone_name = 5;
+  proto.scg.notification.warehouse.enums.InventoryOperationType operation_type = 6;
+  string product_id = 7;
+  string product_name = 8;
+  string product_sku = 9;
+  float quantity = 10;
+  string unit_of_measure = 11;
+  string operator_id = 12;
+  string operator_name = 13;
+  string reference_id = 14;
+  string reference_type = 15;
+  string reason = 16;
+  google.protobuf.Timestamp operation_time = 17;
+  map<string, string> metadata = 18;
+}

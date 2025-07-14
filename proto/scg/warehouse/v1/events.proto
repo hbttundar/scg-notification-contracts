@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package proto.scg.notification.warehouse.events;
+
+import "proto/scg/shared/v1/events.proto";
+import "proto/scg/warehouse/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1";
+
+// WarehouseCreatedNotification is sent when a new warehouse is created
+message WarehouseCreatedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string warehouse_id = 2;
+  string warehouse_name = 3;
+  string warehouse_code = 4;
+  string location = 5;
+  proto.scg.notification.warehouse.enums.WarehouseType type = 6;
+  float total_capacity = 7;
+  string manager_id = 8;
+  string manager_name = 9;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+// WarehouseStatusChangedNotification is sent when a warehouse's status changes
+message WarehouseStatusChangedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string warehouse_id = 2;
+  string warehouse_name = 3;
+  string warehouse_code = 4;
+  proto.scg.notification.warehouse.enums.WarehouseStatus previous_status = 5;
+  proto.scg.notification.warehouse.enums.WarehouseStatus new_status = 6;
+  string reason = 7;
+  string changed_by_id = 8;
+  string changed_by_name = 9;
+  google.protobuf.Timestamp status_changed_at = 10;
+}
+
+// InventoryOperationCompletedNotification is sent when an inventory operation is completed
+message InventoryOperationCompletedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string operation_id = 2;
+  string warehouse_id = 3;
+  string warehouse_name = 4;
+  string zone_id = 5;
+  string zone_name = 6;
+  proto.scg.notification.warehouse.enums.InventoryOperationType operation_type = 7;
+  string product_id = 8;
+  string product_name = 9;
+  string product_sku = 10;
+  float quantity = 11;
+  string unit_of_measure = 12;
+  string operator_id = 13;
+  string operator_name = 14;
+  google.protobuf.Timestamp operation_time = 15;
+}
+
+// WarehouseCapacityThresholdReachedNotification is sent when a warehouse reaches a capacity threshold
+message WarehouseCapacityThresholdReachedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string warehouse_id = 2;
+  string warehouse_name = 3;
+  string warehouse_code = 4;
+  float total_capacity = 5;
+  float available_capacity = 6;
+  float utilization_percentage = 7;
+  float threshold_percentage = 8;
+  string threshold_type = 9;
+  google.protobuf.Timestamp threshold_reached_at = 10;
+}

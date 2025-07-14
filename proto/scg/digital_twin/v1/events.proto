@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto.scg.notification.digital_twin.events;
+
+import "proto/scg/shared/v1/events.proto";
+import "proto/scg/shared/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/digital_twin/v1;digitaltwinv1";
+
+// DigitalTwinAlertNotification is sent when a digital twin generates an alert
+message DigitalTwinAlertNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string digital_twin_id = 2;
+  string physical_asset_id = 3;
+  string physical_asset_type = 4;
+  string alert_type = 5;
+  string alert_description = 6;
+  map<string, string> sensor_data = 7;
+  proto.scg.notification.shared.enums.NotificationSeverity severity = 8;
+  google.protobuf.Timestamp detected_at = 9;
+}

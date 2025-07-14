@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package proto.scg.notification.system.models;
+
+import "proto/scg/system/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/system/v1;systemv1";
+
+// SystemMaintenance represents a system maintenance event
+message SystemMaintenance {
+  string uuid = 1;
+  string name = 2;
+  string description = 3;
+  proto.scg.notification.system.enums.MaintenanceType maintenance_type = 4;
+  google.protobuf.Timestamp start_time = 5;
+  google.protobuf.Timestamp end_time = 6;
+  repeated string affected_services = 7;
+  bool requires_action = 8;
+  string action_description = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}
+
+// Integration represents an integration with an external system
+message Integration {
+  string uuid = 1;
+  string name = 2;
+  string description = 3;
+  proto.scg.notification.system.enums.IntegrationType type = 4;
+  string endpoint = 5;
+  map<string, string> configuration = 6;
+  bool is_active = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}
+
+// IntegrationFailure represents a failure in an integration
+message IntegrationFailure {
+  string uuid = 1;
+  string integration_uuid = 2;
+  string integration_name = 3;
+  string failure_reason = 4;
+  string error_details = 5;
+  int32 retry_count = 6;
+  google.protobuf.Timestamp failure_time = 7;
+  bool requires_manual_intervention = 8;
+  string resolution_steps = 9;
+}

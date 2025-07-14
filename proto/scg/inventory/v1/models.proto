@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package proto.scg.notification.inventory.models;
+
+import "proto/scg/inventory/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/inventory/v1;inventoryv1";
+
+// InventoryItem represents an item in inventory
+message InventoryItem {
+  string id = 1;
+  string sku = 2;
+  string product_id = 3;
+  string product_name = 4;
+  string description = 5;
+  string location_id = 6;
+  string location_name = 7;
+  string owner_id = 8;
+  string owner_name = 9;
+  double quantity = 10;
+  string unit_of_measure = 11;
+  proto.scg.notification.inventory.enums.InventoryItemStatus status = 12;
+  double minimum_stock_level = 13;
+  double maximum_stock_level = 14;
+  double reorder_point = 15;
+  google.protobuf.Timestamp expiration_date = 16;
+  google.protobuf.Timestamp manufacture_date = 17;
+  string batch_number = 18;
+  string lot_number = 19;
+  string serial_number = 20;
+  map<string, string> metadata = 21;
+}
+
+// InventoryTransaction represents a transaction affecting inventory
+message InventoryTransaction {
+  string id = 1;
+  string reference = 2;
+  proto.scg.notification.inventory.enums.InventoryTransactionType type = 3;
+  string inventory_item_id = 4;
+  string product_id = 5;
+  string product_name = 6;
+  string source_location_id = 7;
+  string source_location_name = 8;
+  string destination_location_id = 9;
+  string destination_location_name = 10;
+  double quantity = 11;
+  string unit_of_measure = 12;
+  string reason = 13;
+  string actor_id = 14;
+  string actor_name = 15;
+  google.protobuf.Timestamp transaction_date = 16;
+  map<string, string> metadata = 17;
+}
+
+// InventoryAlert represents an alert related to inventory
+message InventoryAlert {
+  string id = 1;
+  proto.scg.notification.inventory.enums.InventoryAlertType type = 2;
+  string inventory_item_id = 3;
+  string product_id = 4;
+  string product_name = 5;
+  string location_id = 6;
+  string location_name = 7;
+  double current_quantity = 8;
+  double threshold_quantity = 9;
+  string unit_of_measure = 10;
+  string message = 11;
+  google.protobuf.Timestamp alert_date = 12;
+  bool is_resolved = 13;
+  google.protobuf.Timestamp resolved_date = 14;
+  string resolved_by_id = 15;
+  string resolved_by_name = 16;
+  string resolution_notes = 17;
+}

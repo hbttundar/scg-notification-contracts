@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package proto.scg.notification.custody.events;
+
+import "proto/scg/shared/v1/events.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/custody/v1;custodyv1";
+
+// CustodyInitiatedNotification is sent when a custody transfer is initiated
+message CustodyInitiatedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string custody_id = 2;
+  string custody_reference = 3;
+  string entity_id = 4;
+  string entity_type = 5;
+  string transferor_id = 6;
+  string transferor_name = 7;
+  string transferee_id = 8;
+  string transferee_name = 9;
+  string custody_type = 10;
+  string location = 11;
+  google.protobuf.Timestamp initiated_at = 12;
+}
+
+// CustodyTransferredNotification is sent when custody is transferred
+message CustodyTransferredNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string custody_id = 2;
+  string custody_reference = 3;
+  string entity_id = 4;
+  string entity_type = 5;
+  string transferor_id = 6;
+  string transferor_name = 7;
+  string transferee_id = 8;
+  string transferee_name = 9;
+  string verification_method = 10;
+  string location = 11;
+  google.protobuf.Timestamp transferred_at = 12;
+}
+
+// CustodyReceivedNotification is sent when custody is received
+message CustodyReceivedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string custody_id = 2;
+  string custody_reference = 3;
+  string entity_id = 4;
+  string entity_type = 5;
+  string transferor_id = 6;
+  string transferor_name = 7;
+  string transferee_id = 8;
+  string transferee_name = 9;
+  string location = 10;
+  google.protobuf.Timestamp received_at = 11;
+}
+
+// CustodyRejectedNotification is sent when custody transfer is rejected
+message CustodyRejectedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string custody_id = 2;
+  string custody_reference = 3;
+  string entity_id = 4;
+  string entity_type = 5;
+  string transferor_id = 6;
+  string transferor_name = 7;
+  string transferee_id = 8;
+  string transferee_name = 9;
+  string reason = 10;
+  string location = 11;
+  google.protobuf.Timestamp rejected_at = 12;
+}
+
+// CustodyEvidenceAddedNotification is sent when evidence is added to a custody record
+message CustodyEvidenceAddedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string custody_id = 2;
+  string custody_reference = 3;
+  string evidence_id = 4;
+  string evidence_type = 5;
+  string added_by_id = 6;
+  string added_by_name = 7;
+  google.protobuf.Timestamp added_at = 8;
+}

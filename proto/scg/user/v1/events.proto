@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package proto.scg.notification.user.events;
+
+import "proto/scg/shared/v1/events.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/user/v1;userv1";
+
+// UserInvitedNotification is sent when a user is invited to the platform
+message UserInvitedNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string inviter_uuid = 2;
+  string inviter_name = 3;
+  string invitee_email = 4;
+  string organization_uuid = 5;
+  string organization_name = 6;
+  string role = 7;
+  google.protobuf.Timestamp invitation_expires_at = 8;
+}
+
+// UserRegisteredNotification is sent when a user completes registration
+message UserRegisteredNotification {
+  proto.scg.notification.shared.events.NotificationEvent base = 1;
+  string user_uuid = 2;
+  string user_name = 3;
+  string organization_uuid = 4;
+  string organization_name = 5;
+  string role = 6;
+}

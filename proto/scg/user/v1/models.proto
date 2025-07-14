@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package proto.scg.notification.user.models;
+
+import "proto/scg/shared/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/user/v1;userv1";
+
+// UserNotification represents a notification for a specific user
+message UserNotification {
+  string uuid = 1;
+  string notification_uuid = 2;
+  string user_uuid = 3;
+  bool is_read = 4;
+  google.protobuf.Timestamp read_at = 5;
+  bool is_archived = 6;
+  google.protobuf.Timestamp archived_at = 7;
+}
+
+// NotificationPreference represents a user's preferences for receiving notifications
+message NotificationPreference {
+  string user_uuid = 1;
+  proto.scg.notification.shared.enums.NotificationCategory category = 2;
+  proto.scg.notification.shared.enums.NotificationType type = 3;
+  repeated proto.scg.notification.shared.enums.DeliveryChannel enabled_channels = 4;
+  bool is_opted_out = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}

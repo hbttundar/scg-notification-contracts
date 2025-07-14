@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package proto.scg.notification.compliance.models;
+
+import "proto/scg/shared/v1/enums.proto";
+import "proto/scg/compliance/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/compliance/v1;compliancev1";
+
+// ComplianceCheck represents a compliance check
+message ComplianceCheck {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  proto.scg.notification.compliance.enums.ComplianceCheckType type = 4;
+  proto.scg.notification.compliance.enums.ComplianceCheckStatus status = 5;
+  repeated proto.scg.notification.compliance.enums.ComplianceRegulation regulations = 6;
+  string entity_id = 7;
+  string entity_type = 8;
+  google.protobuf.Timestamp check_time = 9;
+  google.protobuf.Timestamp next_check_time = 10;
+  string failure_reason = 11;
+  map<string, string> metadata = 12;
+}
+
+// ComplianceViolation represents a compliance violation
+message ComplianceViolation {
+  string id = 1;
+  string compliance_check_id = 2;
+  string entity_id = 3;
+  string entity_type = 4;
+  string violation_description = 5;
+  proto.scg.notification.compliance.enums.ComplianceRegulation regulation = 6;
+  proto.scg.notification.shared.enums.NotificationSeverity severity = 7;
+  google.protobuf.Timestamp detected_at = 8;
+  google.protobuf.Timestamp resolved_at = 9;
+  bool is_resolved = 10;
+  string resolution_description = 11;
+}

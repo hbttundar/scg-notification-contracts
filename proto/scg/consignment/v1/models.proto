@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package proto.scg.notification.consignment.models;
+
+import "proto/scg/consignment/v1/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/consignment/v1;consignmentv1";
+
+// Consignment represents a consignment in the system
+message Consignment {
+  string id = 1;
+  string reference = 2;
+  string origin = 3;
+  string destination = 4;
+  string shipper_id = 5;
+  string shipper_name = 6;
+  string consignee_id = 7;
+  string consignee_name = 8;
+  proto.scg.notification.consignment.enums.ConsignmentStatus status = 9;
+  proto.scg.notification.consignment.enums.ConsignmentType type = 10;
+  proto.scg.notification.consignment.enums.ConsignmentPriority priority = 11;
+  google.protobuf.Timestamp estimated_departure = 12;
+  google.protobuf.Timestamp estimated_arrival = 13;
+  google.protobuf.Timestamp actual_departure = 14;
+  google.protobuf.Timestamp actual_arrival = 15;
+  bool on_time = 16;
+  int32 delay_in_minutes = 17;
+  map<string, string> metadata = 18;
+}
+
+// ConsignmentStatusChange represents a change in the status of a consignment
+message ConsignmentStatusChange {
+  string id = 1;
+  string consignment_id = 2;
+  string consignment_reference = 3;
+  proto.scg.notification.consignment.enums.ConsignmentStatus previous_status = 4;
+  proto.scg.notification.consignment.enums.ConsignmentStatus new_status = 5;
+  string location = 6;
+  string reason = 7;
+  google.protobuf.Timestamp status_changed_at = 8;
+}
+
+// ConsignmentItem represents an item within a consignment
+message ConsignmentItem {
+  string id = 1;
+  string consignment_id = 2;
+  string product_id = 3;
+  string product_name = 4;
+  string description = 5;
+  int32 quantity = 6;
+  string unit_of_measure = 7;
+  double weight = 8;
+  string weight_unit = 9;
+  double volume = 10;
+  string volume_unit = 11;
+  map<string, string> metadata = 12;
+}
