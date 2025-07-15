@@ -7,7 +7,7 @@
 package logisticsv1
 
 import (
-	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1"
+	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -396,7 +396,7 @@ const file_proto_scg_logistics_v1_events_proto_rawDesc = "" +
 	"\x0erecipient_name\x18\x06 \x01(\tR\rrecipientName\x12=\n" +
 	"\farrival_time\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\varrivalTime\x12\x17\n" +
 	"\aon_time\x18\b \x01(\bR\x06onTime\x12(\n" +
-	"\x10delay_in_minutes\x18\t \x01(\x05R\x0edelayInMinutesB[ZYgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/logistics/v1;logisticsv1b\x06proto3"
+	"\x10delay_in_minutes\x18\t \x01(\x05R\x0edelayInMinutesBUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/logistics/v1;logisticsv1b\x06proto3"
 
 var (
 	file_proto_scg_logistics_v1_events_proto_rawDescOnce sync.Once

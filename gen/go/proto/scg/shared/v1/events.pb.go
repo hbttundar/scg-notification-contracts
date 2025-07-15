@@ -179,7 +179,7 @@ const file_proto_scg_shared_v1_events_proto_rawDesc = "" +
 	"\x0eschema_version\x18\x06 \x01(\x05R\rschemaVersion\"\xc8\x01\n" +
 	"\x11NotificationEvent\x12[\n" +
 	"\benvelope\x18\x01 \x01(\v2?.proto.scg.notification.shared.events.NotificationEventEnvelopeR\benvelope\x12V\n" +
-	"\fnotification\x18\x02 \x01(\v22.proto.scg.notification.shared.models.NotificationR\fnotificationBUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1;sharedv1b\x06proto3"
+	"\fnotification\x18\x02 \x01(\v22.proto.scg.notification.shared.models.NotificationR\fnotificationBOZMgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1;sharedv1b\x06proto3"
 
 var (
 	file_proto_scg_shared_v1_events_proto_rawDescOnce sync.Once

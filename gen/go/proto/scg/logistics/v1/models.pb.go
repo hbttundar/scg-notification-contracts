@@ -342,7 +342,7 @@ const file_proto_scg_logistics_v1_models_proto_rawDesc = "" +
 	"new_status\x18\x05 \x01(\x0e29.proto.scg.notification.logistics.enums.ConsignmentStatusR\tnewStatus\x12\x1a\n" +
 	"\blocation\x18\x06 \x01(\tR\blocation\x12\x16\n" +
 	"\x06reason\x18\a \x01(\tR\x06reason\x12F\n" +
-	"\x11status_changed_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x0fstatusChangedAtB[ZYgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/logistics/v1;logisticsv1b\x06proto3"
+	"\x11status_changed_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\x0fstatusChangedAtBUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/logistics/v1;logisticsv1b\x06proto3"
 
 var (
 	file_proto_scg_logistics_v1_models_proto_rawDescOnce sync.Once

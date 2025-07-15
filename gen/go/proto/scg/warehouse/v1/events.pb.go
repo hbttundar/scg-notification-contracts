@@ -7,7 +7,7 @@
 package warehousev1
 
 import (
-	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1"
+	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -594,7 +594,7 @@ const file_proto_scg_warehouse_v1_events_proto_rawDesc = "" +
 	"\x14threshold_percentage\x18\b \x01(\x02R\x13thresholdPercentage\x12%\n" +
 	"\x0ethreshold_type\x18\t \x01(\tR\rthresholdType\x12L\n" +
 	"\x14threshold_reached_at\x18\n" +
-	" \x01(\v2\x1a.google.protobuf.TimestampR\x12thresholdReachedAtB[ZYgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1b\x06proto3"
+	" \x01(\v2\x1a.google.protobuf.TimestampR\x12thresholdReachedAtBUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/warehouse/v1;warehousev1b\x06proto3"
 
 var (
 	file_proto_scg_warehouse_v1_events_proto_rawDescOnce sync.Once

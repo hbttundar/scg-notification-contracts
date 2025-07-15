@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: proto/scg/risk/v1/enums.proto
 
-package risknotificationv1
+package riskv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -228,7 +228,7 @@ const file_proto_scg_risk_v1_enums_proto_rawDesc = "" +
 	"\x15RISK_STATUS_MITIGATED\x10\x03\x12\x18\n" +
 	"\x14RISK_STATUS_ACCEPTED\x10\x04\x12\x1b\n" +
 	"\x17RISK_STATUS_TRANSFERRED\x10\x05\x12\x17\n" +
-	"\x13RISK_STATUS_AVOIDED\x10\x06BTZRgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/v1;risknotificationv1b\x06proto3"
+	"\x13RISK_STATUS_AVOIDED\x10\x06BKZIgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/risk/v1;riskv1b\x06proto3"
 
 var (
 	file_proto_scg_risk_v1_enums_proto_rawDescOnce sync.Once

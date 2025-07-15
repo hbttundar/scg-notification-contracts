@@ -6,7 +6,7 @@ import "proto/scg/shared/v1/events.proto";
 import "proto/scg/shared/v1/enums.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/v1;risknotificationv1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/risk/v1;riskv1";
 
 // RiskAlertNotification is sent when a risk threshold is exceeded
 message RiskAlertNotification {

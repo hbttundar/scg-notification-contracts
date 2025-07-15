@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.scg.notification.logistics.enums;
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/logistics/v1;logisticsv1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/logistics/v1;logisticsv1";
 
 // ConsignmentStatus represents the status of a consignment
 enum ConsignmentStatus {

@@ -5,7 +5,7 @@ package proto.scg.notification.logistics.models;
 import "proto/scg/logistics/v1/enums.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/logistics/v1;logisticsv1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/logistics/v1;logisticsv1";
 
 // Consignment represents a consignment in the system
 message Consignment {

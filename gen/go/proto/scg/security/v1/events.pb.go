@@ -7,7 +7,7 @@
 package securityv1
 
 import (
-	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1"
+	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

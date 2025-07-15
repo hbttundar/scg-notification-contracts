@@ -239,7 +239,7 @@ const file_proto_scg_warehouse_v1_enums_proto_rawDesc = "" +
 	"\x1fINVENTORY_OPERATION_TYPE_RETURN\x10\x06\x12'\n" +
 	"#INVENTORY_OPERATION_TYPE_ADJUSTMENT\x10\a\x12%\n" +
 	"!INVENTORY_OPERATION_TYPE_TRANSFER\x10\b\x12(\n" +
-	"$INVENTORY_OPERATION_TYPE_CYCLE_COUNT\x10\tB[ZYgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1b\x06proto3"
+	"$INVENTORY_OPERATION_TYPE_CYCLE_COUNT\x10\tBUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/warehouse/v1;warehousev1b\x06proto3"
 
 var (
 	file_proto_scg_warehouse_v1_enums_proto_rawDescOnce sync.Once

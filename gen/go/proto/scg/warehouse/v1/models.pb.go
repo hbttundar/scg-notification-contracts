@@ -599,7 +599,7 @@ const file_proto_scg_warehouse_v1_models_proto_rawDesc = "" +
 	"\bmetadata\x18\x12 \x03(\v2I.proto.scg.notification.warehouse.models.InventoryOperation.MetadataEntryR\bmetadata\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B[ZYgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1b\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01BUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/warehouse/v1;warehousev1b\x06proto3"
 
 var (
 	file_proto_scg_warehouse_v1_models_proto_rawDescOnce sync.Once

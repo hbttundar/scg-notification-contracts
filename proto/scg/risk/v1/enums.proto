@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.scg.notification.risk.enums;
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/v1;risknotificationv1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/risk/v1;riskv1";
 
 // RiskType represents the type of risk
 enum RiskType {

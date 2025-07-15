@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: proto/scg/risk/v1/models.proto
 
-package risknotificationv1
+package riskv1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -308,7 +308,7 @@ const file_proto_scg_risk_v1_models_proto_rawDesc = "" +
 	"\x0enew_risk_score\x18\x06 \x01(\x01R\fnewRiskScore\x12)\n" +
 	"\x10assessment_notes\x18\a \x01(\tR\x0fassessmentNotes\x12;\n" +
 	"\vassessed_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"assessedAtBTZRgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/v1;risknotificationv1b\x06proto3"
+	"assessedAtBKZIgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/risk/v1;riskv1b\x06proto3"
 
 var (
 	file_proto_scg_risk_v1_models_proto_rawDescOnce sync.Once

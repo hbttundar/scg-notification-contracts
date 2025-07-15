@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.scg.notification.warehouse.enums;
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/warehouse/v1;warehousev1";
 
 // WarehouseStatus represents the status of a warehouse
 enum WarehouseStatus {

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto.scg.notification.shared.enums;
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1;sharedv1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1;sharedv1";
 
 // DeliveryChannel represents the different channels through which notifications can be delivered
 enum DeliveryChannel {

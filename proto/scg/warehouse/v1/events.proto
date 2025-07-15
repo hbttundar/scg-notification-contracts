@@ -6,7 +6,7 @@ import "proto/scg/shared/v1/events.proto";
 import "proto/scg/warehouse/v1/enums.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/warehouse/v1;warehousev1";
 
 // WarehouseCreatedNotification is sent when a new warehouse is created
 message WarehouseCreatedNotification {

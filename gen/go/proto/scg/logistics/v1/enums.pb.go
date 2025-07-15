@@ -231,7 +231,7 @@ const file_proto_scg_logistics_v1_enums_proto_rawDesc = "" +
 	"\x11SHIPMENT_TYPE_LCL\x10\x02\x12\x16\n" +
 	"\x12SHIPMENT_TYPE_BULK\x10\x03\x12\x1b\n" +
 	"\x17SHIPMENT_TYPE_BREAKBULK\x10\x04\x12\x16\n" +
-	"\x12SHIPMENT_TYPE_RORO\x10\x05B[ZYgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/logistics/v1;logisticsv1b\x06proto3"
+	"\x12SHIPMENT_TYPE_RORO\x10\x05BUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/logistics/v1;logisticsv1b\x06proto3"
 
 var (
 	file_proto_scg_logistics_v1_enums_proto_rawDescOnce sync.Once

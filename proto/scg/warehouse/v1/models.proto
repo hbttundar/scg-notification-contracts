@@ -5,7 +5,7 @@ package proto.scg.notification.warehouse.models;
 import "proto/scg/warehouse/v1/enums.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/warehouse/v1;warehousev1";
+option go_package = "github.com/hbttundar/scg-notification-contracts/gen/go/scg/warehouse/v1;warehousev1";
 
 // Warehouse represents a warehouse in the system
 message Warehouse {

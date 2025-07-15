@@ -4,10 +4,10 @@
 // 	protoc        (unknown)
 // source: proto/scg/risk/v1/events.proto
 
-package risknotificationv1
+package riskv1
 
 import (
-	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1"
+	v1 "github.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -149,7 +149,7 @@ const file_proto_scg_risk_v1_events_proto_rawDesc = "" +
 	"\tthreshold\x18\a \x01(\x01R\tthreshold\x12U\n" +
 	"\bseverity\x18\b \x01(\x0e29.proto.scg.notification.shared.enums.NotificationSeverityR\bseverity\x12;\n" +
 	"\vdetected_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"detectedAtBTZRgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/v1;risknotificationv1b\x06proto3"
+	"detectedAtBKZIgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/risk/v1;riskv1b\x06proto3"
 
 var (
 	file_proto_scg_risk_v1_events_proto_rawDescOnce sync.Once

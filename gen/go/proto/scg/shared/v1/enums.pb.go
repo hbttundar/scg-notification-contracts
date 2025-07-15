@@ -494,7 +494,7 @@ const file_proto_scg_shared_v1_enums_proto_rawDesc = "" +
 	" NOTIFICATION_CATEGORY_PROVENANCE\x10\x0f\x12\x1e\n" +
 	"\x1aNOTIFICATION_CATEGORY_UNIT\x10\x10\x12\x1e\n" +
 	"\x1aNOTIFICATION_CATEGORY_USER\x10\x11\x12#\n" +
-	"\x1fNOTIFICATION_CATEGORY_WAREHOUSE\x10\x12BUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1;sharedv1b\x06proto3"
+	"\x1fNOTIFICATION_CATEGORY_WAREHOUSE\x10\x12BOZMgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1;sharedv1b\x06proto3"
 
 var (
 	file_proto_scg_shared_v1_enums_proto_rawDescOnce sync.Once

@@ -828,7 +828,7 @@ const file_proto_scg_shared_v1_models_proto_rawDesc = "" +
 	"\x12notification_uuids\x18\x06 \x03(\tR\x11notificationUuids\x129\n" +
 	"\n" +
 	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12O\n" +
-	"\x06status\x18\b \x01(\x0e27.proto.scg.notification.shared.enums.NotificationStatusR\x06statusBUZSgithub.com/hbttundar/scg-notification-contracts/gen/go/proto/scg/shared/v1;sharedv1b\x06proto3"
+	"\x06status\x18\b \x01(\x0e27.proto.scg.notification.shared.enums.NotificationStatusR\x06statusBOZMgithub.com/hbttundar/scg-notification-contracts/gen/go/scg/shared/v1;sharedv1b\x06proto3"
 
 var (
 	file_proto_scg_shared_v1_models_proto_rawDescOnce sync.Once
